@@ -1,6 +1,9 @@
 import Page from "./page.js"
-
 class Renders {
+    constructor(){
+        new Page()
+    }
+
     changeModal(btnClicked) {
         const currentPage = btnClicked.parentElement
         const nextPage = currentPage.nextElementSibling

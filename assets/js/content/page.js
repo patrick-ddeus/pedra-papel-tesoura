@@ -57,7 +57,7 @@ class Page {
         </div>
         <div class="who-win">
           <h2 class="who-win-message">-</h2>
-          <a href="">Jogar Dnv</a>
+          <a href="#" id="play-again">Jogar Dnv</a>
         </div>
         <div class="computerPick">
           <p>A escolha da casa</p>
@@ -71,4 +71,4 @@ class Page {
 
 }
 
-export default new Page
+export default Page
