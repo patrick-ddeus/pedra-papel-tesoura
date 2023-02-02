@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --body-radial-gradient: hsl(214, 47%, 23%), hsl(237, 49%, 15%);
+    /* Icons */
+    --scissors-gradient: hsl(39, 89%, 49%), hsl(40, 84%, 53%);
+    --paper-gradient: hsl(230, 89%, 62%), hsl(230, 89%, 65%);
+    --rock-gradient: hsl(349, 71%, 52%), hsl(349, 70%, 56%);
+
+    /* Miscelaneous */
+    --dark-text: hsl(229, 25%, 31%);
+    --score-text: hsl(229, 64%, 46%);
+    --header-outline: hsl(217, 16%, 45%);
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(var(--body-radial-gradient));
+    font-family: "Barlow Semi Condensed", sans-serif;
+    color: white;
+    padding-top: 30px;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.main-page .startGame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40vh;
+    margin-top: 50px;
+}
+
+.main-page .startGame button {
+    padding: 8px 30px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: scale .5s ease;
+}
+
+.main-page .startGame button:hover {
+    scale: 1.1
+}
+
+.main-page .score-area {
+    max-width: 600px;
+    margin: auto;
+    border: 2px solid var(--header-outline);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.main-page .score-area .score-button {
+    width: 110px;
+    height: 90px;
+    font-family: inherit;
+    background-color: white;
+    border: 0;
+    border-radius: 5px;
+}
+
+.main-page .score-area .score {
+    font-size: 3rem;
+    margin-top: -5px;
+    font-weight: 700;
+    color: var(--dark-text);
+    font-family: inherit;
+}
+
+.main-page .score-area .score-button p {
+    color: var(--score-text);
+    font-size: .8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: inherit;
+}
+
+.main-page .score-area .score-text-list {
+    margin-left: 5px;
+}
+
+.main-page .score-area .score-text-item {
+    font-size: 2rem;
+    line-height: .8;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Game section */
+
+.main-page .choose-section.hidden,
+.startGame.hidden,
+.game-section.hidden {
+    opacity: 0;
+    top: -1000px;
+    position: absolute;
+    z-index: -1
+}
+
+.main-page .choose-section {
+    background: url("./images/bg-triangle.svg");
+    max-width: 350px;
+    height: 400px;
+    background-repeat: no-repeat;
+    margin: 60px auto 0;
+    position: relative;
+    transition: opacity .5s ease;
+}
+
+.buttonGame {
+    position: absolute;
+    background-color: white;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    left: -20px;
+    top: -30px;
+    cursor: pointer;
+    box-shadow: 0px 10px 1px hsla(229, 65%, 13%, 0.705);
+    transition: transform 0.3s;
+}
+
+.buttonGame:hover {
+    transform: scale(.9)
+}
+
+.main-page .choose-section .buttonGame#rock {
+    top: 200px;
+    left: 105px;
+}
+
+.buttonGame#rock {
+    border: 15px solid hsl(349, 71%, 52%);
+}
+
+.buttonGame.clicked {
+    transform: scale(0.8);
+}
+
+.buttonGame#paper.selecionado,
+.buttonGame#scissors.selecionado,
+.buttonGame#rock.selecionado {
+    background-color: rgb(18, 196, 18);
+    border: 15px solid rgb(17, 167, 49);
+}
+
+.buttonGame#scissors {
+    border: 15px solid hsl(39, 89%, 49%);
+}
+
+.main-page .choose-section .buttonGame#scissors {
+    left: 220px;
+}
+
+.buttonGame#paper {
+    border: 15px solid hsl(230, 89%, 65%);
+}
+
+.main-page .game-section {
+    display:flex;
+    justify-content: space-between;
+    max-width: 600px;
+    height: 400px;
+    text-align: center;
+    margin: 60px auto 0;
+    transition: all .5s ease;
+}
+
+.main-page .game-section.stretch{
+    max-width:900px;
+}
+
+.main-page .game-section .who-win{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    height:300px;
+    gap:20px;
+    opacity:0;
+    white-space: nowrap;
+}
+
+.main-page .game-section.stretch .who-win{
+    opacity:1;
+}
+
+.main-page .game-section .who-win h2{
+    font-size:2.6rem;
+    text-transform: uppercase;
+}
+
+.main-page .game-section .who-win a{
+    padding:13px 46px;
+    margin:0 auto;
+    display:inline-block;
+    background:#fff;
+    border-radius:10px;
+    color:rgb(192, 9, 9);
+    text-decoration: none;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size:12px;
+    font-weight: 600;
+    transition:transform .5s;
+}
+
+.main-page .game-section .who-win a:hover{
+    transform: scale(.9);
+}
+
+.game-section .buttonGame {
+    width: 200px;
+    height: 200px;
+}
+
+.game-section p {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.game-section .buttonGame img {
+    width: 80px;
+}
+
+.yourPick, .computerPick{
+    display: flex;
+    gap:60px;
+    flex-direction: column;
+}
+
+.yourPick .buttonGame{
+    position:static;
+}
+
+.computerPick .buttonGame{
+    position:static;
+}
+
+.game-section .default {
+    width: 190px;
+    height: 190px;
+    background-color: hsla(238, 48%, 15%, 0.363);
+    border-radius: 50%;
+}
+
+.game-section .imagem {
+    width: 200px;
+    height: 200px;
+}
+
+@media screen and (max-width:610px){
+    .main-page .game-section .who-win{
+        align-self: flex-end;
+        position:absolute;
+        transform: translateX(50%);
+        height:100px;
+    }
+}
