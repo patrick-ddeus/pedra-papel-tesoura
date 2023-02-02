@@ -7,6 +7,10 @@ class StartEvents{
         this.buttonsGame = document.querySelectorAll(".choose-section .buttonGame");
 
         this.playAgain = document.getElementById("play-again")
+
+        this.rulesModal = document.querySelector(".rules-modal")
+        this.rulesBtn = document.getElementById("rulesBtn");
+        this.closeBtn = document.querySelector(".closeButton")
     }
 
     listenerEvents(){
@@ -26,6 +30,14 @@ class StartEvents{
             currentSection.classList.add("hidden")
             currentSection.classList.remove("stretch")
             previousSection.classList.remove("hidden")
+        })
+
+        this.rulesBtn.addEventListener("click", _=>{
+            this.rulesModal.classList.remove("hidden")
+        })
+
+        this.closeBtn.addEventListener("click", _=>{
+            this.rulesModal.classList.add("hidden")
         })
     }
 }

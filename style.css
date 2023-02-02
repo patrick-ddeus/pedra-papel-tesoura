@@ -131,6 +131,7 @@ img {
     margin: 60px auto 0;
     position: relative;
     transition: opacity .5s ease;
+    z-index:1;
 }
 
 .buttonGame {
@@ -186,7 +187,7 @@ img {
 }
 
 .main-page .game-section {
-    display:flex;
+    display: flex;
     justify-content: space-between;
     max-width: 600px;
     height: 400px;
@@ -195,46 +196,46 @@ img {
     transition: all .5s ease;
 }
 
-.main-page .game-section.stretch{
-    max-width:900px;
+.main-page .game-section.stretch {
+    max-width: 900px;
 }
 
-.main-page .game-section .who-win{
-    display:flex;
+.main-page .game-section .who-win {
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    height:300px;
-    gap:20px;
-    opacity:0;
+    height: 300px;
+    gap: 20px;
+    opacity: 0;
     white-space: nowrap;
 }
 
-.main-page .game-section.stretch .who-win{
-    opacity:1;
+.main-page .game-section.stretch .who-win {
+    opacity: 1;
 }
 
-.main-page .game-section .who-win h2{
-    font-size:2.6rem;
+.main-page .game-section .who-win h2 {
+    font-size: 2.6rem;
     text-transform: uppercase;
 }
 
-.main-page .game-section .who-win a{
-    padding:13px 46px;
-    margin:0 auto;
-    display:inline-block;
-    background:#fff;
-    border-radius:10px;
-    color:rgb(192, 9, 9);
+.main-page .game-section .who-win a {
+    padding: 13px 46px;
+    margin: 0 auto;
+    display: inline-block;
+    background: #fff;
+    border-radius: 10px;
+    color: rgb(192, 9, 9);
     text-decoration: none;
     font-family: inherit;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size:12px;
+    font-size: 12px;
     font-weight: 600;
-    transition:transform .5s;
+    transition: transform .5s;
 }
 
-.main-page .game-section .who-win a:hover{
+.main-page .game-section .who-win a:hover {
     transform: scale(.9);
 }
 
@@ -253,18 +254,18 @@ img {
     width: 80px;
 }
 
-.yourPick, .computerPick{
+.yourPick, .computerPick {
     display: flex;
-    gap:60px;
+    gap: 60px;
     flex-direction: column;
 }
 
-.yourPick .buttonGame{
-    position:static;
+.yourPick .buttonGame {
+    position: static;
 }
 
-.computerPick .buttonGame{
-    position:static;
+.computerPick .buttonGame {
+    position: static;
 }
 
 .game-section .default {
@@ -279,11 +280,80 @@ img {
     height: 200px;
 }
 
-@media screen and (max-width:610px){
-    .main-page .game-section .who-win{
+/* Rules Modal */
+
+.rules-modal {
+    width: 390px;
+    height: 390px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    transition: all .6s ease;
+    z-index: 2;
+}
+
+.rules-modal.hidden{
+    opacity:0;
+    top:1000px;
+
+}
+
+#rulesBtn{
+    position:absolute;
+    bottom:0;
+    right:0;
+    padding:10px 30px;
+    display:inline-block;
+    text-decoration: none;
+    border:1px solid white;
+    color:white;
+    border-radius:5px;
+    margin:15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size:13px;
+    letter-spacing: 2px;
+}
+.closeButton{
+    background-color: transparent;
+    border:0;
+}
+
+.closeButton::after {
+    font-size: 30px;
+    line-height: 35px;
+    content: "\00d7";
+    text-align: center;
+    display: block;
+    width: 35px;
+    top: 20px;
+    right: 10px;
+    position: absolute;
+    color:var(--dark-text);
+    cursor: pointer;
+}
+
+.rules-modal .image-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top:20px;
+}
+
+.rules-modal .modal-title {
+    color: var(--dark-text)
+}
+
+@media screen and (max-width:610px) {
+    .main-page .game-section .who-win {
         align-self: flex-end;
-        position:absolute;
+        position: absolute;
         transform: translateX(50%);
-        height:100px;
+        height: 100px;
     }
 }
