@@ -34,7 +34,7 @@ Usuários deverão ser capaz de:
 
 ### Links
 
-- Live Site URL: [Veja a aplicação aqui](patrick-ddeus.github.io/pedra-papel-tesoura)
+- Live Site URL: [Veja a aplicação aqui](https://patrick-ddeus.github.io/pedra-papel-tesoura/)
 
 ## Meu Processo
 
