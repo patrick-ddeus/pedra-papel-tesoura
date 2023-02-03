@@ -124,7 +124,7 @@ img {
 }
 
 .main-page .choose-section {
-    background: url("./images/bg-triangle.svg");
+    background: url("./images/bg-pentagon.svg");
     max-width: 350px;
     height: 400px;
     background-repeat: no-repeat;
@@ -154,10 +154,6 @@ img {
     transform: scale(.9)
 }
 
-.main-page .choose-section .buttonGame#rock {
-    top: 200px;
-    left: 105px;
-}
 
 .buttonGame#rock {
     border: 15px solid hsl(349, 71%, 52%);
@@ -178,8 +174,37 @@ img {
     border: 15px solid hsl(39, 89%, 49%);
 }
 
+.main-page .choose-section .buttonGame#paper {
+    top:20px;
+    left:-60px;
+}
+
+.main-page .choose-section .buttonGame#rock {
+    top: 220px;
+    left: 190px;
+}
+
 .main-page .choose-section .buttonGame#scissors {
-    left: 220px;
+    left: 250px;
+    top:30px;
+}
+
+.main-page .choose-section .buttonGame#lizard {
+    top:-80px;
+    left: 100px;
+}
+
+.main-page .choose-section .buttonGame#spock {
+    top:220px;
+    left:-20px;
+}
+
+.buttonGame#lizard{
+    border: 15px solid hsl(261, 73%, 60%);
+}
+
+.buttonGame#spock{
+    border: 15px solid hsl(189, 59%, 53%);
 }
 
 .buttonGame#paper {
@@ -284,7 +309,7 @@ img {
 
 .rules-modal {
     width: 390px;
-    height: 390px;
+    height: 440px;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -299,7 +324,6 @@ img {
 .rules-modal.hidden{
     opacity:0;
     top:1000px;
-
 }
 
 #rulesBtn{
@@ -318,6 +342,15 @@ img {
     font-size:13px;
     letter-spacing: 2px;
 }
+
+
+.rules-modal .image-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .closeButton{
     background-color: transparent;
     border:0;
@@ -337,13 +370,6 @@ img {
     cursor: pointer;
 }
 
-.rules-modal .image-area {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top:20px;
-}
 
 .rules-modal .modal-title {
     color: var(--dark-text)

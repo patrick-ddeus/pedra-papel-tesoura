@@ -42,6 +42,12 @@ class Page {
         <div class="buttonGame" id="scissors">
           <img src="images/scissors.svg" alt="">
         </div>
+        <div class="buttonGame" id="lizard">
+        <img src="images/lizard.svg" alt="">
+      </div>
+      <div class="buttonGame" id="spock">
+      <img src="images/spock.svg" alt="">
+    </div>
       </section>
         `
     }

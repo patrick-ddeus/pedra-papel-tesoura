@@ -4,9 +4,11 @@ class GameControl {
     constructor() {
         this.score = 0;
         this.choices = {
-            rock: {paper: "lose", scissors:"win", rock:"draw"}, 
-            paper: {scissors: "lose", rock:"win", paper:"draw"}, 
-            scissors: {rock:"lose", paper:"win", scissors:"draw"}
+            rock: {paper: "lose", scissors:"win", spock:"lose", lizard:"win",rock:"draw"}, 
+            paper: {scissors: "lose", rock:"win", spock:"win",lizard:"lose", paper:"draw"}, 
+            scissors: {rock:"lose", paper:"win", spock:"lose", lizard:"win", scissors:"draw"},
+            lizard: {rock:"lose", paper:"win", spock:"win", scissors:"lose", lizard:"draw"},
+            spock: {rock:"win", paper:"lose", lizard:"lose", scissors:"win", spock:"draw"},
         }
     }
 
@@ -23,7 +25,7 @@ class GameControl {
     }
 
     generateComputerChoice(){
-        const options = ["rock", "paper", "scissors"]
+        const options = ["rock", "paper", "scissors", "lizard", "spock"]
         const defaultButton = document.querySelector(".defaultButton")
 
         const interval = setInterval(() => {
