@@ -128,7 +128,7 @@ img {
     max-width: 350px;
     height: 400px;
     background-repeat: no-repeat;
-    margin: 60px auto 0;
+    margin: 90px auto 0;
     position: relative;
     transition: opacity .5s ease;
     z-index:1;
