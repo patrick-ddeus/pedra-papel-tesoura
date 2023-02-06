@@ -3,4 +3,3 @@ import GameControl from "./events/game-control.js"
 
 document.body.onload = GameControl.loadScore()
 StartEvents.listenerEvents()
-

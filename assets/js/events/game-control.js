@@ -30,12 +30,12 @@ class GameControl {
 
         const interval = setInterval(() => {
             randomize()
-        }, 400)
+        }, 200)
 
         setTimeout(() => {
             clearInterval(interval)
             this.comparePicks()
-        }, 5000)
+        }, 3500)
 
         function randomize() {
             const randomImage = Math.floor(Math.random() * options.length)
@@ -66,7 +66,7 @@ class GameControl {
                 this.saveScore();
                 break;
             case "lose":
-                this.score = this.score < 0 ? 0 : this.score -1;
+                this.score = this.score <= 0 ? 0 : this.score -1;
                 this.saveScore();
                 break;
             default:

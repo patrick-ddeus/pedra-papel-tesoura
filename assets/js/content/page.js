@@ -32,7 +32,7 @@ class Page {
 
     chooseStart(){
         this.app.innerHTML += `
-        <section class="choose-section hidden">
+        <section class="choose-section hidden" >
         <div class="buttonGame" id="rock">
           <img src="images/rock.svg" alt="">
         </div>
@@ -54,7 +54,7 @@ class Page {
 
     gameSection(){
         this.app.innerHTML +=`
-        <section class="game-section hidden">
+        <section class="game-section hidden" >
         <div class="yourPick">
           <p>Sua escolha</p>
           <div class="buttonGame your-pick-choice winner" id="scissors">
@@ -74,7 +74,7 @@ class Page {
       </section>
         `
     }
-
+    
 }
 
 export default Page
